@@ -5,9 +5,11 @@ import java.awt.event.ActionListener;
 
 public class GUIconversor extends JFrame{
 
-    String[] currencies = {"Peso (MXN) a Dolar", "Peso (MXN) a Euros",
-            "Peso (MXN) a Euro", "Peso (MXN) a Libras Esterlinas",
-            "Peso (MXN) a Yen Japonés", "Peso (MXN) a Won Sur-Coreano"};
+    String[] currencies = {"Pesos (MXN) a Dolar", "Pesos (MXN) a Euros",
+            "Pesos (MXN) a Libras Esterlinas", "Pesos (MXN) a Yen Japonés", "Pesos (MXN) a Won Sur-Coreano",
+
+            "Dolar a Pesos (MXN)","Euros a Pesos (MXN)", "Libras Esterlinas a Pesos (MXN)", "Yen Japonés a Pesos (MXN)",
+            "Won Sur-Corenao a Pesos (MXN)"};
 
     public GUIconversor() { //Constructor
 
@@ -34,6 +36,7 @@ public class GUIconversor extends JFrame{
         amount.setBounds(100,85,200,20);
 
 
+
         JComboBox currencybox1 = new JComboBox(currencies);
         currencybox1.setBounds(100, 120,200,30);
         //currencybox1.addItem("op6"); añade items
@@ -54,11 +57,7 @@ public class GUIconversor extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                /*LogicsConversor conversor = new LogicsConversor();
-                conversor.convert(currencybox1.getSelectedItem(), amount.getText());*/
-
                 result.setText(LogicsConversor.convert(currencybox1.getSelectedIndex(), amount.getText()));
-                //LogicsConversor.convert(currencybox1.getSelectedIndex(), amount.getText());
 
 
             }
