@@ -57,8 +57,8 @@ public class GUIconversor extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                result.setText(LogicsConversor.convert(currencybox1.getSelectedIndex(), amount.getText()));
-
+                Currencies currency = new Currencies();
+                result.setText(currency.selectConvertion(currencybox1.getSelectedIndex(), amount.getText()));
 
             }
         });
@@ -95,7 +95,4 @@ public class GUIconversor extends JFrame{
         p.setOpaque(false);
         //p.setBackground(Color.GRAY);
     }
-
-
-
 }
