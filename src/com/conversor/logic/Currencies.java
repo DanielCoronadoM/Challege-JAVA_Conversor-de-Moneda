@@ -1,7 +1,9 @@
-public class Currencies extends LogicsConversor{
+package com.conversor.logic;
+
+public class Currencies implements LogicsConversor{
 
     @Override
-    public String selectConvertion(Object item, String amount) {
+    public String selectConvertion(Object item, String amount){
         try {
             int i = (int) item;                     //Convertir el "Objeto" a tipo int
             String answer = "Ingrese un monto";
@@ -55,9 +57,10 @@ public class Currencies extends LogicsConversor{
             }
             return answer;
 
-        }catch (Exception exception){
+        }catch (Exception e){
             System.out.println("Excepción: No se ingresó un monto");
-            return "Ingresa un número válido";
+            System.out.println(e.getMessage());
+            return "Ingrese un numero válido";
         }
     }
 

@@ -1,3 +1,6 @@
+package com.conversor.GUI;
+
+import com.conversor.logic.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -44,7 +47,7 @@ public class GUIconversor extends JFrame{
 
         JButton btn1 = new JButton();
         btn1.setText("Convertir");
-        btn1.setBounds(100,200,200,20);
+        btn1.setBounds(100,170,200,20);
 
         JTextField result = new JTextField();
         result.setBounds(100,250,200,20);
@@ -70,7 +73,7 @@ public class GUIconversor extends JFrame{
         JFrame mainframe = new JFrame();
         mainframe.setTitle("Conversor de Monedas");
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainframe.setLayout(null);
+        mainframe.setLayout(null);  //Desactiva el layout por defecto y dejar mover los elemetos al gusto
         mainframe.setSize(550,600);
         mainframe.setVisible(true);
         mainframe.setLocationRelativeTo(null);
