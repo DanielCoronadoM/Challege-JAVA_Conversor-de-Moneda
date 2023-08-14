@@ -8,11 +8,13 @@ import java.awt.event.ActionListener;
 
 public class GUIconversor extends JFrame{
 
-    String[] currencies = {"Pesos (MXN) a Dolar", "Pesos (MXN) a Euros",
+    String[] PesosTo = {"Pesos (MXN) a Dolar", "Pesos (MXN) a Euros",
             "Pesos (MXN) a Libras Esterlinas", "Pesos (MXN) a Yen Japonés", "Pesos (MXN) a Won Sur-Coreano",
 
             "Dolar a Pesos (MXN)","Euros a Pesos (MXN)", "Libras Esterlinas a Pesos (MXN)", "Yen Japonés a Pesos (MXN)",
             "Won Sur-Corenao a Pesos (MXN)"};
+
+
 
     public GUIconversor() { //Constructor
 
@@ -40,14 +42,14 @@ public class GUIconversor extends JFrame{
 
 
 
-        JComboBox currencybox1 = new JComboBox(currencies);
-        currencybox1.setBounds(100, 120,200,30);
+        JComboBox currencybox1 = new JComboBox(PesosTo);
+        currencybox1.setBounds(100, 150,200,30);
         //currencybox1.addItem("op6"); añade items
-
 
         JButton btn1 = new JButton();
         btn1.setText("Convertir");
-        btn1.setBounds(100,170,200,20);
+        btn1.setBounds(100,200,200,20);
+
 
         JTextField result = new JTextField();
         result.setBounds(100,250,200,20);
@@ -74,7 +76,7 @@ public class GUIconversor extends JFrame{
         mainframe.setTitle("Conversor de Monedas");
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainframe.setLayout(null);  //Desactiva el layout por defecto y dejar mover los elemetos al gusto
-        mainframe.setSize(550,600);
+        mainframe.setSize(550,400);
         mainframe.setVisible(true);
         mainframe.setLocationRelativeTo(null);
         mainframe.setResizable(false);
@@ -91,6 +93,15 @@ public class GUIconversor extends JFrame{
 
     }
 
+    /**
+     * Metodo para "Settear un label"
+     * @param p Nombre de la etiqueta creada
+     * @param text Texto que muestra la etiqueta
+     * @param x posicion x
+     * @param y posicion y
+     * @param w ancho
+     * @param h alto
+     */
     public void CreateLabel(JLabel p, String text, int x, int y, int w, int h){
         p.setText(text);
         p.setBounds(x,y,w,h);

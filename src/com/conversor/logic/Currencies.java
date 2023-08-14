@@ -58,9 +58,18 @@ public class Currencies implements LogicsConversor{
             return answer;
 
         }catch (Exception e){
-            System.out.println("Excepción: No se ingresó un monto");
-            System.out.println(e.getMessage());
-            return "Ingrese un numero válido";
+            //System.out.println("Excepción: No se ingresó un monto");
+
+            String emptyfield = e.getMessage();
+            System.out.println(emptyfield.equals("empty String"));
+
+            if (emptyfield.equals("empty String")){
+                System.out.println("No se ingreso un valor");
+                return "Ingrese un valor";
+            }else {
+                System.out.println("Se ingreso alguna letra");
+                return "Ingrese solo números";
+            }
         }
     }
 
